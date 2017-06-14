@@ -11,15 +11,18 @@ namespace FlappyBird
         Bird bird;
         GameObjectList pipes;
         int frameCounter = 0;
+        Score score;
 
         public PlayingState()
         {
             bird = new Bird();
             pipes = new GameObjectList();
+            score = new Score();
 
             this.Add(new SpriteGameObject("spr_background"));
             this.Add(bird);
             this.Add(pipes);
+            this.Add(score);
         }
 
         public override void Update(GameTime gameTime)
