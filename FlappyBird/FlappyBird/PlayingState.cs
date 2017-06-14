@@ -33,6 +33,28 @@ namespace FlappyBird
                 this.pipes.Add(new Pipe());
                 frameCounter = 0;
             }
+
+            Boolean isGameOver = false;
+
+            foreach(Pipe pipe in pipes.Objects)
+            {
+                if (bird.Position.Y > FlappyBird.Screen.Y || bird.Position.Y < 0 || bird.CollidesWith(pipe))
+                {
+                    isGameOver = true;
+                }
+            }
+            
+            if(isGameOver == true)
+            {
+                SetGameOver();
+            }          
+        }
+
+        public void SetGameOver()
+        {
+            bird.Reset();
+            pipes.Objects.Clear();
+            frameCounter = 0;
         }
     }
 }
