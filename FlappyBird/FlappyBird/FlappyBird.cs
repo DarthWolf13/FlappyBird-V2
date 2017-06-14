@@ -35,8 +35,10 @@ namespace FlappyBird
             SetFullScreen(false);
 
             // TODO: use this.Content to load your game content here
+            gameStateManager.AddGameState("TitleState", new TitleState());
             gameStateManager.AddGameState("PlayingState", new PlayingState());
-            gameStateManager.SwitchTo("PlayingState");
+            gameStateManager.AddGameState("GameOverState", new GameOverState());
+            gameStateManager.SwitchTo("TitleState");
         }
        
     }

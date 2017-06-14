@@ -68,6 +68,7 @@ namespace FlappyBird
             pipes.Objects.Clear();
             frameCounter = 0;
             score.ScoreValue = 0;
+            FlappyBird.GameStateManager.SwitchTo("GameOverState");
         }
     }
 }
