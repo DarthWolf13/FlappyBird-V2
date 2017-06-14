@@ -45,12 +45,21 @@ namespace FlappyBird
                 {
                     isGameOver = true;
                 }
+
+                if (pipe.Position.X + pipe.Width < 0)
+                {
+                    this.pipes.Remove(pipe);
+                    score.ScoreValue += 1;
+                    break;
+                }
             }
             
             if(isGameOver == true)
             {
                 SetGameOver();
-            }          
+            }        
+            
+              
         }
 
         public void SetGameOver()
@@ -58,6 +67,7 @@ namespace FlappyBird
             bird.Reset();
             pipes.Objects.Clear();
             frameCounter = 0;
+            score.ScoreValue = 0;
         }
     }
 }
